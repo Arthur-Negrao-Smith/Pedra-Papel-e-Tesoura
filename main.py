@@ -12,7 +12,9 @@ while True:
     jogo.tela_titulo()
     resposta_pes = jogo.perguntar_escolha()
     resposta_pc = jogo.escolher_pc()
+    print('~'*30)
     print(f'Escolha o Humano: {possibilidades[resposta_pes]}\nEscolha da Máquina {possibilidades[resposta_pc]}')
+    print('~'*30)
     resultado = jogo.tela_resultado(escolha_pc=resposta_pc, escolha_pes=resposta_pes)
     while loop:
         loop, continuar = jogo.continuar()

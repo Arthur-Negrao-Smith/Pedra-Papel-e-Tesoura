@@ -1,11 +1,14 @@
 from random import randint
+from time import sleep
 
 class Jogo:
+    """O jogo deve ser posto num laço while True para funcionar como previsto"""
     def __init__(self) -> None:
         self.escolha_pes = int
         self.escolha_pc = int
 
     def tela_titulo(self):
+        """mprime uma tela de título"""
         titulo = 'Pedra, Papel e tesoura'
         print(f"{titulo:-^50}")
 
@@ -16,13 +19,17 @@ class Jogo:
     
     def tela_resultado(self, escolha_pes, escolha_pc):
         if escolha_pes == 0 and escolha_pc == 2 or escolha_pes == 1 and escolha_pc == 0 or escolha_pes == 2 and escolha_pc == 1:
+            sleep(0.5)
             print('PARABÉNS! \nVOCÊ GANHOU... Pura sorte...')
         elif escolha_pes == escolha_pc:
+            sleep(0.5)
             print('DEU EMPATE! Maldito humano...')
         else:
+            sleep(0.5)
             print('Não foi dessa vez HUMANO! HUAHUAHUA')
         
     def continuar(self):
+        """Pergunta se o jogo deve continuar e trata os erros"""
         try:
             voltar = input('Deseja continuar? [s/n] ').strip()
             continua = False
@@ -34,10 +41,12 @@ class Jogo:
                 if voltar in 'Ss':
                     print('CARREGANDO...')
                     continua = True
+                    sleep(0.5)
                     return False, continua
                 else:
                     print('Fechando jogo...')
                     continua = False
+                    sleep(0.5)
                     return False, continua
             else:
                 continua = True 
